@@ -1,23 +1,57 @@
 ## RIAIntelligence
 
-One app for registered investment advisory firms on Microsoft 365: a conversation beside the firm's
-own data, with the firm in visible control of what the AI may see and do. Today it runs on an
-invented firm. No real firm is connected.
+Raya is an AI working environment for independent advisory firms: one build a firm's people open in
+Microsoft Teams or a browser, reading the firm's CRM, portfolio system, custodian files, documents
+and mail into one database the firm owns. RIAIntelligence builds it, fits it to each firm and keeps
+it running. Today it runs on an invented firm. No real firm is connected.
 
 ### The repositories
 
 | | |
 |---|---|
-| **[hq](https://github.com/RIAIntelligence/hq)** | The product's code and the company's pages, side by side. Start at `README.md`, then `VISION.md` for what this is and `PLAN.md` for what is left. |
-| **[recomp](https://github.com/RIAIntelligence/recomp)** | The library: craft on agents and on Claude Code, with no company in it. |
-| **[prototype](https://github.com/RIAIntelligence/prototype)** | The March to August 2026 chapter, closed. No new work here. |
-| **[product](https://github.com/RIAIntelligence/product)** | Empty. Reserved for the rebuild. |
+| **[raya](https://github.com/RIAIntelligence/raya)** | The product. `docs/` says what Raya is and does, exactly enough to build from, and the code is built from those documents in numbered sprints. Start at `docs/RAYA-INDEX.md`. |
+| **[hq](https://github.com/RIAIntelligence/hq)** | The company. Its current position on every topic (`spine/`), outside facts with their sources (`research/`), the story so far (`HISTORY.md`), and the live website and demo. |
+| **hq-local** | Private. Real advisory material, recorded meetings and dictated direction. Clients appear only as patterns. |
+| **tenant-firm-01** | Private. The first firm's record. |
 
-A firm's material lives in that firm's own private repository and nowhere else.
+Everything else here is archived and takes no work.
 
-### Where to start
+### How to work
 
-- **New here** → `hq/README.md`, then `hq/VISION.md`
-- **Why something was decided** → the page it changed, or `hq/PLAN.md`'s Log
-- **A fact about the market, a vendor, or a regulation** → `hq/research/INDEX.md`
-- **What is left to build** → `hq/PLAN.md`
+Open Claude Code in `hq` for company work or in `raya` for product work, on your own machine or in
+the cloud at claude.ai/code. The session loads who we are, what is settled and what is in flight, so
+say what you want in plain words. In `raya`, "run the next sprint" builds the next piece of the
+queue.
+
+Nobody pushes to main. Work goes up as a pull request, the checks run, and it merges itself when
+they pass. A routine on the founder's account runs the next sprint every three hours with nobody at
+a machine; its switch is at claude.ai/code/routines.
+
+The team talks in Slack: `#riai` for the product, `#riai-dev` for code.
+
+### Where to read
+
+- **What Raya is** → `raya/docs/RAYA-BIBLE.md`
+- **What is built next** → `raya/docs/RAYA-BUILD-ORDER.md`
+- **The company's position on a topic** → `hq/spine/`
+- **What happened, and where older work went** → `hq/HISTORY.md`
+- **A fact about the market, a vendor or a regulation** → `hq/research/INDEX.md`
+- **What a word means** → `raya/docs/RAYA-GLOSSARY.md`
+
+### What is live
+
+- [www.riaintelligence.ai](https://www.riaintelligence.ai), the website
+- [app.riaintelligence.ai](https://app.riaintelligence.ai), the demo on the invented firm
+
+### Who carries what
+
+| | |
+|---|---|
+| Erik, founder | Direction, product and positioning; anything that commits money or signs; the first firm |
+| Justin, product lead | What the product does and how it feels; the demo; acceptance of its journeys |
+| Daniel, infrastructure and security lead | Deployment, environments, identity, integrations, security; the code host, hosting and merging |
+| Brittany, delivery lead | Onboarding and support; the website, proposals and teaching; how the product talks |
+
+### What never enters a repository
+
+A client's name. A firm's raw material or recordings, which live in `hq-local`. A key.
