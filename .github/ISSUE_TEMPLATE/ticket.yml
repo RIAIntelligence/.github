@@ -2,13 +2,12 @@
 # (raya, hq, website). Issues filed by Claude through the API use the same five ### headings.
 name: Ticket
 description: One piece of work, in the team's standard format.
-type: Task
 body:
   - type: markdown
     attributes:
       value: |
         **Title:** the outcome in plain words, e.g. "Handoffs reach only the colleagues who may see them".
-        After filing, set **Type** (Feature, Bug, Task or Infrastructure), one priority label (**P0**, **P1** or **P2**) and an assignee.
+        After filing, pick the **Type** (Feature, Bug, Task or Infrastructure), one priority label (**P0**, **P1** or **P2**) and an assignee.
   - type: textarea
     id: summary
     attributes:
@@ -34,8 +33,7 @@ body:
     attributes:
       label: Acceptance criteria
       description: What someone can check to know it is done, as it is used.
-      value: |
-        - [ ] 
+      placeholder: "- [ ] The handoff reaches only the colleagues who may see it, walked on the demo"
     validations:
       required: true
   - type: textarea
