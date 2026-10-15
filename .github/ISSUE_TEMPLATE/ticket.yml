@@ -1,0 +1,43 @@
+# The team's one ticket format, for every RIAIntelligence repository without its own templates
+# (raya, hq, website). Issues filed by Claude through the API use the same five ### headings.
+name: Ticket
+description: One piece of work, in the team's standard format.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Title:** the outcome in plain words, e.g. "Handoffs reach only the colleagues who may see them".
+        After filing, pick the **Type** (Feature, Bug, Task or Infrastructure), one priority label (**P0**, **P1** or **P2**) and an assignee.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What changes, and for whom, in one or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why this matters now. The evidence, what was seen, where and when, with links.
+    validations:
+      required: true
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Tasks
+      value: |
+        - [ ] 
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What someone can check to know it is done, as it is used.
+      placeholder: "- [ ] The handoff reaches only the colleagues who may see it, walked on the demo"
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: Related issues and pull requests, and the page that owns the subject.
