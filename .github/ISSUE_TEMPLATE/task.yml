@@ -1,13 +1,14 @@
-# The team's one ticket format, for every RIAIntelligence repository without its own templates
-# (raya, hq, website). Issues filed by Claude through the API use the same five ### headings.
-name: Ticket
-description: One piece of work, in the team's standard format.
+# The team's task format, for every RIAIntelligence repository without its own issue templates.
+# Issues filed by Claude through the API use the same five ### headings.
+name: Task
+description: One piece of work to build, change or check.
+type: Task
 body:
   - type: markdown
     attributes:
       value: |
         **Title:** the outcome in plain words, e.g. "Handoffs reach only the colleagues who may see them".
-        After filing, pick the **Type** (Feature, Bug, Task or Infrastructure), one priority label (**P0**, **P1** or **P2**) and an assignee.
+        After filing, pick one priority label (**P0**, **P1** or **P2**) and an assignee. Add **build** when an agent should build it.
   - type: textarea
     id: summary
     attributes:

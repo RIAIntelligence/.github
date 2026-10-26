@@ -1,0 +1,47 @@
+# The team's bug format, for every RIAIntelligence repository without its own issue templates.
+name: Bug
+description: Something does not work as it should.
+type: Bug
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Title:** what goes wrong, in plain words, e.g. "Send stays disabled after the draft is approved".
+        After filing, pick one priority label (**P0**, **P1** or **P2**) and an assignee.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What goes wrong, and for whom, in one or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Where it happened (local, preview or the demo, with the commit or deployment), and each step.
+      value: |
+        1. 
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual
+      description: What should have happened, and what happened instead. Paste the error, a screenshot or a log line.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What someone can check to know it is fixed.
+      placeholder: "- [ ] Send is enabled once the draft is approved, walked on the demo"
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: Related issues and pull requests, and the page that owns the subject.
